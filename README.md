@@ -1,9 +1,12 @@
-## DFRobot_PH.py Library for Raspberry pi
+## DFRobot_PH Library
 ---------------------------------------------------------
 This is the sample code for Gravity: Analog pH Sensor / Meter Kit V2, SKU:SEN0161-V2
 ## Table of Contents
 
 * [Methods](#methods)
+* [Compatibility](#Compatibility)
+* [History](#history)
+* [Credits](#credits)
 <snippet>
 <content>
 
@@ -38,6 +41,20 @@ float readPH(float voltage, float temperature);
 void calibration(float voltage, float temperature, char* cmd);
 
 ```
+
+## Compatibility
+
+MCU                | Work Well | Work Wrong | Untested  | Remarks
+------------------ | :----------: | :----------: | :---------: | -----
+Arduino Uno  |      √       |             |            | 
+Leonardo  |      √       |             |            | 
+Meag2560 |      √       |             |            | 
+
+## History
+
+- date 2018-11-6
+- version V1.0
+
 ## Credits
 
-Written by Jiawei Zhang, 2018. (Welcome to our [website](https://www.dfrobot.com/))
+Written by Jiawei Zhang(Welcome to our [website](https://www.dfrobot.com/))
