@@ -23,7 +23,8 @@
 #include "WProgram.h"
 #endif
 
-#define ReceivedBufferLength 10  //length of the Serial CMD buffer
+// Length of the Serial CMD buffer
+#define ReceivedBufferLength 10  
 
 class DFRobot_PH
 {
