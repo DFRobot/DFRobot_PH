@@ -40,7 +40,7 @@ DFRobot_PH::DFRobot_PH()
     // This will be 8byte per sensor and the largest arduino has 12 analogue ports
     // So let's start at address 0 and go up by 8b for each analogue port. This will use upto 96b 
     // For the EC library we will start after PH addresses
-    this->_address        = PHVALUEADDR + (sizeof(float) * 2 *  this->_pin);
+    this->_address        = PHVALUEADDR + (sizeof(float) * 2 * EPinToAddressMap[this->_pin]);
 
     // Buffer solution 4.0 at 25C
     this->_acidVoltage    = 2032.44;    
@@ -65,7 +65,7 @@ DFRobot_PH::DFRobot_PH(int phPin)
     // This will be 8byte per sensor and the largest arduino has 12 analogue ports
     // So let's start at address 0 and go up by 8b for each analogue port. This will use upto 96b 
     // For the EC library we will start after PH addresses
-    this->_address        = PHVALUEADDR + (sizeof(float) * 2 *  this->_pin);
+    this->_address        = PHVALUEADDR + (sizeof(float) * 2 * EPinToAddressMap[this->_pin]);
 
     // Buffer solution 4.0 at 25C
     this->_acidVoltage    = 2032.44;    
@@ -121,7 +121,7 @@ float DFRobot_PH::readPH(float voltage, float temperature)
     
     // Linear response y = k*x + b
     this->_phValue = slope * (voltage - 1500.0) / 3.0 + intercept;  
-    
+
     return _phValue;
 }
 
