@@ -46,6 +46,8 @@ public:
     float   readPH(float voltage, float temperature); 
 
 private:
+    int _pin;
+    int _address;
     float  _phValue;
     float  _acidVoltage;
     float  _neutralVoltage;
