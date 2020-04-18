@@ -23,8 +23,26 @@
 #include "WProgram.h"
 #endif
 
+#include <map>
+
 // Length of the Serial CMD buffer
 #define ReceivedBufferLength 10  
+
+/// Map from pin to a address number to be multiplied by the number of bytes offset
+static std::map<uint8_t, uint8_t> EPinToAddressMap{
+	{A0, 0}, 
+	{A1, 1}, 
+	{A2, 2}, 
+	{A3, 3}, 
+	{A4, 4}, 
+	{A5, 5}, 
+	{A6, 6}, 
+	{A7, 7}, 
+	{A8, 8}, 
+	{A9, 9}, 
+	{A10, 10}, 
+	{A11, 11}, 
+    };
 
 class DFRobot_PH
 {
