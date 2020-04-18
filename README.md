@@ -1,6 +1,10 @@
 ## DFRobot_PH Library
 ---------------------------------------------------------
 This is the sample code for Gravity: Analog pH Sensor / Meter Kit V2, SKU:SEN0161-V2
+
+WARNING: There is no temperature compensation implemented in this library.
+         Although you can provide the temperature it is not used.
+
 ## Table of Contents
 
 * [Methods](#methods)
@@ -13,6 +17,12 @@ This is the sample code for Gravity: Analog pH Sensor / Meter Kit V2, SKU:SEN016
 ## Methods
 
 ```C++
+/*
+ * @brief The new optional constructor to allow multiple pH sensors
+ *
+ * @param phPin: The pin of the pH sensor i.e. A0
+ */
+DFRobot_PH(int phPin);
 
 /*
  * @brief Init The Analog pH Sensor
@@ -54,6 +64,10 @@ Meag2560 |      √       |             |            |
 
 - date 2018-11-6
 - version V1.0
+    - Inital version
+- date 2020-04-18
+- version V1.1
+    - Update to allow multiple pH sensors each with their own calibration
 
 ## Credits
 
