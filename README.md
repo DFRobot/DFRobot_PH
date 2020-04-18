@@ -30,7 +30,7 @@ DFRobot_PH(int phPin);
 void begin();
 
 /*
- * @brief Convert voltage to PH with temperature compensation
+ * @brief Convert voltage to PH
  *
  * @param voltage     : Voltage value
  *        temperature : Ambient temperature
