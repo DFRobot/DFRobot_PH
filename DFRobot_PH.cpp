@@ -93,13 +93,8 @@ boolean DFRobot_PH::cmdSerialDataAvailable()
     char cmdReceivedChar;
     static unsigned long cmdReceivedTimeOut = millis();
     while(Serial.available()>0){
-        if(millis() - cmdReceivedTimeOut > 500U){
-            this->_cmdReceivedBufferIndex = 0;
-            memset(this->_cmdReceivedBuffer,0,(ReceivedBufferLength));
-        }
-        cmdReceivedTimeOut = millis();
         cmdReceivedChar = Serial.read();
-        if (cmdReceivedChar == '\n' || this->_cmdReceivedBufferIndex==ReceivedBufferLength-1){
+        if (cmdReceivedChar == '\n' || cmdReceivedChar == '\r' || this->_cmdReceivedBufferIndex==ReceivedBufferLength-1){
             this->_cmdReceivedBufferIndex = 0;
             strupr(this->_cmdReceivedBuffer);
             return true;
@@ -121,6 +116,7 @@ byte DFRobot_PH::cmdParse(const char* cmd)
     }else if(strstr(cmd, "CALPH")  != NULL){
         modeIndex = 2;
     }
+    emptyCmdReceivedBuffer();
     return modeIndex;
 }
 
@@ -134,7 +130,14 @@ byte DFRobot_PH::cmdParse()
     }else if(strstr(this->_cmdReceivedBuffer, "CALPH")  != NULL){
         modeIndex = 2;
     }
+    emptyCmdReceivedBuffer();
     return modeIndex;
+}
+
+void DFRobot_PH::emptyCmdReceivedBuffer()
+{
+  this->_cmdReceivedBufferIndex = 0;
+  memset(this->_cmdReceivedBuffer,0,(ReceivedBufferLength));
 }
 
 void DFRobot_PH::phCalibration(byte mode)
