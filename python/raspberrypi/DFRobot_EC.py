@@ -1,3 +1,13 @@
+'''!
+  @file DFRobot_EC.py
+  @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+  @license     The MIT License (MIT)
+  @author [Jiawei Zhang](jiawei.zhang@dfrobot.com)
+  @version  V1.0
+  @date  2018-11-06
+  @url https://github.com/DFRobot/DFRobot_PH
+'''
+
 import time
 import sys
 

@@ -1,29 +1,25 @@
-/*
- * file DFRobot_PH_EC.ino
- * @ https://github.com/DFRobot/DFRobot_PH
+/*!
+ * @file DFRobot_PH_EC.h
+ * @brief This is the sample code for The Mixed use of two sensors: 
+ * @n 1. Gravity: Analog pH Sensor / Meter Kit V2, SKU:SEN0161-V2
+ * @n 2. Analog Electrical Conductivity Sensor / Meter Kit V2 (K=1.0), SKU: DFR0300.
+ * @n In order to guarantee precision, a temperature sensor such as DS18B20 is needed, to execute automatic temperature compensation.
+ * @n Serial Commands:
+ * @n   PH Calibration：
+ * @n    enterph -> enter the calibration mode
+ * @n    calph   -> calibrate with the standard buffer solution, two buffer solutions(4.0 and 7.0) will be automaticlly recognized
+ * @n    exitph  -> save the calibrated parameters and exit from calibration mode
+ * @n   EC Calibration：
+ * @n    enterph -> enter the PH calibration mode
+ * @n    calph   -> calibrate with the standard buffer solution, two buffer solutions(4.0 and 7.0) will be automaticlly recognized
+ * @n    exitph  -> save the calibrated parameters and exit from PH calibration mode
  *
- * This is the sample code for The Mixed use of two sensors: 
- *       1、Gravity: Analog pH Sensor / Meter Kit V2, SKU:SEN0161-V2
- *       2、Analog Electrical Conductivity Sensor / Meter Kit V2 (K=1.0), SKU: DFR0300.
- * In order to guarantee precision, a temperature sensor such as DS18B20 is needed, to execute automatic temperature compensation.
- * You can send commands in the serial monitor to execute the calibration.
- * Serial Commands:
- *
- *  PH Calibration：
- *   enterph -> enter the PH calibration mode
- *   calph   -> calibrate with the standard buffer solution, two buffer solutions(4.0 and 7.0) will be automaticlly recognized
- *   exitph  -> save the calibrated parameters and exit from PH calibration mode
- *
- *  EC Calibration：
- *   enterec -> enter the EC calibration mode
- *   calec   -> calibrate with the standard buffer solution, two buffer solutions(1413us/cm and 12.88ms/cm) will be automaticlly recognized
- *   exitec  -> save the calibrated parameters and exit from EC calibration mode
- *
- * Copyright   [DFRobot](http://www.dfrobot.com), 2018
- * Copyright   GNU Lesser General Public License
- *
- * version  V1.0
- * date  2018-04
+ * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @license     The MIT License (MIT)
+ * @author [Jiawei Zhang](jiawei.zhang@dfrobot.com)
+ * @version  V1.0
+ * @date  2018-11-06
+ * @url https://github.com/DFRobot/DFRobot_PH
  */
 
 #include "DFRobot_PH.h"

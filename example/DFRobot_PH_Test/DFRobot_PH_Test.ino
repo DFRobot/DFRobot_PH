@@ -1,20 +1,19 @@
-/*
- * file DFRobot_PH.ino
- * @ https://github.com/DFRobot/DFRobot_PH
+/*!
+ * @file DFRobot_PH_Test.h
+ * @brief This is the sample code for Gravity: Analog pH Sensor / Meter Kit V2, SKU:SEN0161-V2.
+ * @n In order to guarantee precision, a temperature sensor such as DS18B20 is needed, to execute automatic temperature compensation.
+ * @n You can send commands in the serial monitor to execute the calibration.
+ * @n Serial Commands:
+ * @n    enterph -> enter the calibration mode
+ * @n    calph   -> calibrate with the standard buffer solution, two buffer solutions(4.0 and 7.0) will be automaticlly recognized
+ * @n    exitph  -> save the calibrated parameters and exit from calibration mode
  *
- * This is the sample code for Gravity: Analog pH Sensor / Meter Kit V2, SKU:SEN0161-V2
- * In order to guarantee precision, a temperature sensor such as DS18B20 is needed, to execute automatic temperature compensation.
- * You can send commands in the serial monitor to execute the calibration.
- * Serial Commands:
- *   enterph -> enter the calibration mode
- *   calph   -> calibrate with the standard buffer solution, two buffer solutions(4.0 and 7.0) will be automaticlly recognized
- *   exitph  -> save the calibrated parameters and exit from calibration mode
- *
- * Copyright   [DFRobot](http://www.dfrobot.com), 2018
- * Copyright   GNU Lesser General Public License
- *
- * version  V1.0
- * date  2018-04
+ * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @license     The MIT License (MIT)
+ * @author [Jiawei Zhang](jiawei.zhang@dfrobot.com)
+ * @version  V1.0
+ * @date  2018-11-06
+ * @url https://github.com/DFRobot/DFRobot_PH
  */
 
 #include "DFRobot_PH.h"

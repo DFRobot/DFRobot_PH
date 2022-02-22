@@ -1,3 +1,13 @@
+'''!
+  @file DFRobot_PH.py
+  @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+  @license     The MIT License (MIT)
+  @author [Jiawei Zhang](jiawei.zhang@dfrobot.com)
+  @version  V1.0
+  @date  2018-11-06
+  @url https://github.com/DFRobot/DFRobot_PH
+'''
+
 import time
 import sys
 
@@ -6,6 +16,9 @@ _acidVoltage      = 2032.44
 _neutralVoltage   = 1500.0
 class DFRobot_PH():
 	def begin(self):
+		'''!
+          @brief   Initialization The Analog pH Sensor.
+        '''
 		global _acidVoltage
 		global _neutralVoltage
 		try:
@@ -19,7 +32,14 @@ class DFRobot_PH():
 		except :
 			print "phdata.txt ERROR ! Please run DFRobot_PH_Reset"
 			sys.exit(1)
-	def readPH(self,voltage,temperature):
+	def read_PH(self,voltage,temperature):
+		'''!
+          @brief   Convert voltage to PH with temperature compensation.
+		  @note voltage to pH value, with temperature compensation
+          @param voltage       Voltage value
+		  @param temperature   Ambient temperature
+          @return  The PH value
+        '''
 		global _acidVoltage
 		global _neutralVoltage
 		slope     = (7.0-4.0)/((_neutralVoltage-1500.0)/3.0 - (_acidVoltage-1500.0)/3.0)
@@ -28,6 +48,10 @@ class DFRobot_PH():
 		round(_phValue,2)
 		return _phValue
 	def calibration(self,voltage):
+		'''!
+          @brief   Calibrate the calibration data.
+          @param voltage       Voltage value
+        '''
 		if (voltage>1322 and voltage<1678):
 			print ">>>Buffer Solution:7.0"
 			f=open('phdata.txt','r+')
@@ -51,6 +75,10 @@ class DFRobot_PH():
 		else:
 			print ">>>Buffer Solution Error Try Again<<<"
 	def reset(self):
+		'''!
+          @brief   Reset the calibration data to default value.
+        '''
+		
 		_acidVoltage    = 2032.44
 		_neutralVoltage = 1500.0
 		try:

@@ -1,3 +1,12 @@
+'''!
+  @file demo_PH_read.py
+  @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+  @license     The MIT License (MIT)
+  @author [Jiawei Zhang](jiawei.zhang@dfrobot.com)
+  @version  V1.0
+  @date  2018-11-06
+  @url https://github.com/DFRobot/DFRobot_PH
+'''
 import sys
 sys.path.append('../')
 import time
@@ -25,6 +34,6 @@ while True :
 	#Get the Digital Value of Analog of selected channel
 	adc0 = ads1115.readVoltage(0)
 	#Convert voltage to PH with temperature compensation
-	PH = ph.readPH(adc0['r'],temperature)
+	PH = ph.read_PH(adc0['r'],temperature)
 	print "Temperature:%.1f ^C PH:%.2f" %(temperature,PH)
 	time.sleep(1.0)
