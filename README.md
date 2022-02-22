@@ -69,7 +69,7 @@ Meag2560 |      √       |             |            |
 
 ## History
 
-- 2018/11/06 - Version 1.0.1 released.
+- 2018/11/06 - Version 1.0.0 released.
 
 ## Credits
 
