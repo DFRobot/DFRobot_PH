@@ -1,4 +1,4 @@
-# DFRobot_AHT20
+# DFRobot_PH
 
 - [English Version](./README.md)
 
