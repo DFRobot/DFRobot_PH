@@ -1,4 +1,4 @@
-## DFRobot_PH.py Library for Raspberry pi
+## DFRobot_PH
 
 * [中文版](./README_CN.md)
 
