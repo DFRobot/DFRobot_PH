@@ -43,15 +43,15 @@ DFRobot_PH::~DFRobot_PH()
 void DFRobot_PH::begin()
 {
     EEPROM_read(PHVALUEADDR, this->_neutralVoltage);  //load the neutral (pH = 7.0)voltage of the pH board from the EEPROM
-    Serial.print("_neutralVoltage:");
-    Serial.println(this->_neutralVoltage);
+    //Serial.print("_neutralVoltage:");
+    //Serial.println(this->_neutralVoltage);
     if(EEPROM.read(PHVALUEADDR)==0xFF && EEPROM.read(PHVALUEADDR+1)==0xFF && EEPROM.read(PHVALUEADDR+2)==0xFF && EEPROM.read(PHVALUEADDR+3)==0xFF){
         this->_neutralVoltage = 1500.0;  // new EEPROM, write typical voltage
         EEPROM_write(PHVALUEADDR, this->_neutralVoltage);
     }
     EEPROM_read(PHVALUEADDR+4, this->_acidVoltage);//load the acid (pH = 4.0) voltage of the pH board from the EEPROM
-    Serial.print("_acidVoltage:");
-    Serial.println(this->_acidVoltage);
+    //Serial.print("_acidVoltage:");
+    //Serial.println(this->_acidVoltage);
     if(EEPROM.read(PHVALUEADDR+4)==0xFF && EEPROM.read(PHVALUEADDR+5)==0xFF && EEPROM.read(PHVALUEADDR+6)==0xFF && EEPROM.read(PHVALUEADDR+7)==0xFF){
         this->_acidVoltage = 2032.44;  // new EEPROM, write typical voltage
         EEPROM_write(PHVALUEADDR+4, this->_acidVoltage);
@@ -62,10 +62,10 @@ float DFRobot_PH::readPH(float voltage, float temperature)
 {
     float slope = (7.0-4.0)/((this->_neutralVoltage-1500.0)/3.0 - (this->_acidVoltage-1500.0)/3.0);  // two point: (_neutralVoltage,7.0),(_acidVoltage,4.0)
     float intercept =  7.0 - slope*(this->_neutralVoltage-1500.0)/3.0;
-    Serial.print("slope:");
-    Serial.print(slope);
-    Serial.print(",intercept:");
-    Serial.println(intercept);
+    //Serial.print("slope:");
+    //Serial.print(slope);
+    //Serial.print(",intercept:");
+    //Serial.println(intercept);
     this->_phValue = slope*(voltage-1500.0)/3.0+intercept;  //y = k*x + b
     return _phValue;
 }
