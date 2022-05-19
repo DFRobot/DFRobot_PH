@@ -24,7 +24,8 @@ Analog pH meter V2 is specifically designed to measure the pH of the solution an
 
 ## Installation
 
-To use this library, first download the library file, paste it into the \Arduino\libraries directory, then open the examples folder and run the demo in the folder.
+To use this library, first download the library file, paste it into the \Arduino\libraries directory, then open the examples folder and run the demo in the folder.<br>
+Depends library: https://github.com/DFRobot/DFRobot_EC
 
 
 ## Methods
@@ -66,6 +67,7 @@ MCU                | Work Well | Work Wrong | Untested  | Remarks
 Arduino Uno  |      √       |             |            | 
 Leonardo  |      √       |             |            | 
 Meag2560 |      √       |             |            | 
+esp32 series   |              |     x       |            |
 
 ## History
 

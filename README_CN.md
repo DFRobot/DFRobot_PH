@@ -27,7 +27,8 @@
 
 这里有2种安装方法：
 1. 使用此库前，请首先下载库文件，将其粘贴到\Arduino\libraries目录中，然后打开examples文件夹并在该文件夹中运行演示。
-2. 直接在Arduino软件库管理中搜索下载 DFRobot_AHT20 库
+2. 直接在Arduino软件库管理中搜索下载 DFRobot_AHT20 库 <br>
+在运行此库的demo之前，你需要下载关联库: https://github.com/DFRobot/DFRobot_EC
 
 ## 方法
 
@@ -67,6 +68,7 @@ MCU                | Work Well | Work Wrong | Untested  | Remarks
 Arduino Uno  |      √       |             |            | 
 Leonardo  |      √       |             |            | 
 Meag2560 |      √       |             |            | 
+esp32 series   |              |     x       |            |
 
 ## 历史
 
