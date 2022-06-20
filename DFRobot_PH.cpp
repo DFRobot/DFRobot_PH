@@ -75,8 +75,9 @@ void DFRobot_PH::calibration(float voltage, float temperature,char* cmd)
 {
     this->_voltage = voltage;
     this->_temperature = temperature;
-    strupr(cmd);
-    phCalibration(cmdParse(cmd));  // if received Serial CMD from the serial monitor, enter into the calibration mode
+    String sCmd = String(cmd);
+    sCmd.toUpperCase();
+    phCalibration(cmdParse(sCmd.c_str()));  // if received Serial CMD from the serial monitor, enter into the calibration mode
 }
 
 void DFRobot_PH::calibration(float voltage, float temperature)
@@ -188,6 +189,7 @@ void DFRobot_PH::phCalibration(byte mode)
             Serial.println();
             if(phCalibrationFinish){
                 if((this->_voltage>1322)&&(this->_voltage<1678)){
+
                     EEPROM_write(PHVALUEADDR, this->_neutralVoltage);
                 }else if((this->_voltage>1854)&&(this->_voltage<2210)){
                     EEPROM_write(PHVALUEADDR+4, this->_acidVoltage);
