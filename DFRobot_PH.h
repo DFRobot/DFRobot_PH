@@ -69,6 +69,7 @@ private:
     void    phCalibration(byte mode); // calibration process, wirte key parameters to EEPROM
     byte    cmdParse(const char* cmd);
     byte    cmdParse();
+	char* strupr(char* str);
 };
 
 #endif

@@ -57,7 +57,7 @@ void loop()
         Serial.println("ms/cm");
     }
     if(readSerial(cmd)){
-        strupr(cmd);
+        toUpperCase(cmd);
         if(strstr(cmd,"PH")){
             ph.calibration(voltagePH,temperature,cmd);       //PH calibration process by Serail CMD
         }
@@ -89,4 +89,13 @@ bool readSerial(char result[]){
 float readTemperature()
 {
   //add your code here to get the temperature from your temperature sensor
+}
+
+void toUpperCase(char* str) 
+{
+    if (str == NULL) return;
+    for (int i = 0; str[i] != '\0'; i++) 
+	{
+        str[i] = toupper(str[i]);
+    }
 }
